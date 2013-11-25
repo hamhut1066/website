@@ -1,14 +1,28 @@
-<!-- this is the master page which holds the main format of the entire website -->
-
-<!--header-->
+<!DOCTYPE html>
+<html>
+<!-- begin head #############################################-->
+<head>
 <?php include('../common/header.php'); ?>
-<!--/header-->
+</head>
+<!-- end head  #############################################-->
+
+<!-- begin body  #############################################-->
+<body>
+
 <!--menu-->
 <?php include('../common/menu.php'); ?>
-<!--/menu-->
+
 <!--content-->
 <?php /* make this do validation */ include($page_content); ?>
-<!--/content-->
-<!--footer-->
+
+</body>
+<!-- end body  #############################################-->
+
+<!-- begin footer  #############################################-->
+<div id="footer">
+
 <?php include('../common/footer.php'); ?>
-<!--/footer-->
+
+</div>
+<!-- end footer  #############################################-->
+</html>
