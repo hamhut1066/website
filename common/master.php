@@ -1,19 +1,62 @@
+<?php
+#includes up at the top so they are easy to find
+#and global variables
+$p = "../common"; #the path to all the common files
+include("$p/db.php"); #include the database driver
+include("$p/Parsedown.php"); #include markdown parsing class
+
+#this could be changed to use a database for increased efficiency
+$text = file_get_contents("../content/$page_content.md");
+
+$result = Parsedown::instance()->parse($text);
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <!-- begin head #############################################-->
 <head>
-<?php include('../common/header.php'); ?>
+<?php include("$p/header.php"); ?>
+<!-- javascript includes -->
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+
 </head>
 <!-- end head  #############################################-->
 
 <!-- begin body  #############################################-->
+<div id="wrap">
+<div class="container">
 <body>
 
 <!--menu-->
-<?php include('../common/menu.php'); ?>
+<?php include("$p/menu.php"); ?>
 
 <!--content-->
-<?php /* make this do validation */ include($page_content); ?>
+
+<div id="main" class="container clear-top">
+<div class="row">
+<div class="col-xs-2">
+<!-- I can now add random things in here If I feel so inclined -->
+</div>
+<div class="col-xs-8 hidden-phone">
+<?php
+#this prints out the content of the page
+if (!$result)
+    include("$p/404.php");
+else
+    echo $result; # prints: <p>Hello <strong>Parsedown</strong>!</p>
+if (!$static)
+    echo $output;
+?>
+</div>
+<div class="col-xs-2">
+</div>
+</div>
+</div>
+</div>
+</div>
+<?php /* make this do validation */ #include($page_content); ?>
 
 </body>
 <!-- end body  #############################################-->
@@ -21,8 +64,9 @@
 <!-- begin footer  #############################################-->
 <div id="footer">
 
-<?php include('../common/footer.php'); ?>
+<?php include("$p/footer.php"); ?>
 
+</div>
 </div>
 <!-- end footer  #############################################-->
 </html>
