@@ -1,7 +1,7 @@
 <?php
 
-$tmp = ltrim($path, '/');
-$headerurl = "$header |  $tmp";
+#$tmp = ltrim($path, '/');
+$headerurl = "$header |  $title";
 if($path == '/'){ 
     $headerurl = $header;}
 ?>

@@ -46,7 +46,7 @@ if (!$result)
     include("$p/404.php");
 else
     echo $result; # prints: <p>Hello <strong>Parsedown</strong>!</p>
-if (!$static)
+if (!$static_page)
     echo $output;
 ?>
 </div>

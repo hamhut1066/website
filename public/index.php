@@ -1,6 +1,9 @@
 <?php
-#require("../common/ParseDown.php");
-#$haml = new HamlParser(array('style'=>'nested', 'ugly'=>false));
+#include the config file
+include("../common/config.php");
+#include the parsedown function, that allows writing web pages in haml
+include("../common/ParseDown.php"); #disabled at the moment
+$haml = ""; #new HamlParser(array{'style'=>'nested', 'ugly'=>false});
 #all that needs to be done is to set $page_content, then `require` the 
 #master page.
 #get the url information
@@ -16,14 +19,16 @@ $path = $urlcontent[path];
 
 #conditional to check if we are on the homepage
 if($path == '/'){
-    $page_content = "/static/index";
+    $page_content = "$static/index";
 }else {
     $page_content = $path;
 }
 $header = "hamhut"; #the default header for the website
-$static = True; #the default assumption for the website is that the page is static
+$static_page = True; #the default assumption for the website is that the page is static
 #write a function that checks the url to see if it is a reserved word, if yes, 
 #then pass off to a function and set a different variable for use
+$tmp = explode("$static/", $path);
+$title = $tmp[1];
 require('../common/master.php');
-echo endsWith($path, '#');
+#echo endsWith($path, '#');
 ?>
