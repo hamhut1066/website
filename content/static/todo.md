@@ -1,8 +1,7 @@
 #TODO
 
 
-__fix the footer!!!__
-- this is not important, but I want it done
+- rewrite to use ajax
 
 - create an array of reserved words in the index page that will be passed to a
   handler function
