@@ -26,15 +26,15 @@ $(document).ready( function() {
     });
 
     $(function() { 
-        $(".click").bind("click", function() {
+        $(document).on("click", ".click", function() {
             dest = $(this).attr("dest");
+            if (dest.substring(0,1) == "#"){ dest = dest.substring(1);}
             loadPage(dest);
         });
     });
 });
 function loadPage(dest) {
     // add logic to get rid of the # symbol at the beginning
-    $("#location").html(dest);
     $.ajax({
         type: "GET",
         data: "page="+dest,
@@ -42,7 +42,6 @@ function loadPage(dest) {
         success: function(data) { //if there is a successful reply
             $("#content").html(data);
             location.hash = dest;
-            //$("#location").html(dest);
         }
     });
 }
