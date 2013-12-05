@@ -12,7 +12,7 @@
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
         <li><a class = "click" dest="feed" id="feed" href="#">Feed</a></li>
-        <li><a class="click" dest="todo" href="#">Todo</a></li>
+        <li><a href="/static/todo">Todo</a></li>
         <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">

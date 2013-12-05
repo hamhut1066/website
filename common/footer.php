@@ -1,6 +1,7 @@
 <div class="container navbar-fixed-bottom">
 <div class="row">
 <div class="col-xs-2">
+<span id="location">hello world</span>
 </div>
 <div class="col-xs-8">
 </div>

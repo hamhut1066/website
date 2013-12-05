@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php
 #includes up at the top so they are easy to find
 #and global variables
-define(COMMON, "/srv/http/common");
-?>
+$p = "../common"; #the path to all the common files
+include("$p/db.php"); #include the database driver
+include("$p/Parsedown.php"); #include markdown parsing class
 
+#this could be changed to use a database for increased efficiency
+$text = file_get_contents("../content/$page_content.md");
+
+$result = Parsedown::instance()->parse($text);
+$index_page = Parsedown::instance()->parse(file_get_contents("../content/static/index.md"));
+?>
+<!DOCTYPE html>
+<html lang="en">
 <!-- begin head #############################################-->
 <head>
-<?php include(COMMON."/header.php"); ?>
+<?php include("$p/header.php"); ?>
 <!-- javascript includes -->
 
 <script src="https://code.jquery.com/jquery.js"></script>
@@ -24,7 +31,7 @@ define(COMMON, "/srv/http/common");
 <body>
 
 <!--menu-->
-<?php include(COMMON."/menu.php"); ?>
+<?php include("$p/menu.php"); ?>
 
 <!--content-->
 
@@ -34,7 +41,16 @@ define(COMMON, "/srv/http/common");
 <!-- I can now add random things in here If I feel so inclined -->
 </div>
 <div class="col-xs-8 hidden-phone">
-<span id="content"></span><!--the content of the page -->
+<span id="content"></span>
+<!--<?php # commented out -----------
+#this prints out the content of the page
+if (!$result)
+    include("$p/404.php");
+else
+    echo $result; # prints: <p>Hello <strong>Parsedown</strong>!</p>
+if (!$static_page)
+    echo $output;
+# end comment ?>-->
 </div>
 <div class="col-xs-2">
 </div>
@@ -42,6 +58,7 @@ define(COMMON, "/srv/http/common");
 </div>
 </div>
 </div>
+<?php /* make this do validation */ #include($page_content); ?>
 
 </body>
 <!-- end body  #############################################-->
@@ -49,7 +66,7 @@ define(COMMON, "/srv/http/common");
 <!-- begin footer  #############################################-->
 <div id="footer">
 
-<?php include(COMMON."/footer.php"); ?>
+<?php include("$p/footer.php"); ?>
 
 </div>
 </div>
