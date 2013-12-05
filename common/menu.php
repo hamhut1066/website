@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="http://hamhut1066.com">hamhut1066</a>
+        <a class="navbar-brand click" dest="index" href="#">hamhut1066</a>
     </div>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
@@ -19,11 +19,17 @@
                 <li><a href="#">Action</a></li>
                 <li><a href="/thisisarandomlink">I am a Red Herring</a></li>
                 <li class="divider"></li>
-                <li class="dropdown-header">Personal</li>
+                <li class="dropdown-header">Personal - external</li>
                 <li><a href="http://blog.hamhut1066.com">Ghost Blog</a></li>
                 <li class="dropdown-header">Professional</li>
                 <li><a class="click" dest="cv" href="#">Curriculum Vitae</a></li>
               </ul>
+            </li>
+            <li class="btn pull-right">
+                <audio controls>
+                <source src="http://home.hamhut1066.com:1235/stream.ogg" type="audio/ogg">
+                :( no support for ogg
+                </audio>
             </li>
         </ul>
         </li><!-- drop down -->
