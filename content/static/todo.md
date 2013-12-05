@@ -2,6 +2,7 @@
 
 
 - rewrite to use ajax
+    - pretty much done, but may be a little messy
 
 - create an array of reserved words in the index page that will be passed to a
   handler function
