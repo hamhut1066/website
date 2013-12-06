@@ -9,6 +9,4 @@ containing everything I enjoy and map my path through music.
 A growing collection of random thoughts about the books I read and the books I
 want to read
 
-----
-
-_All the content on the website has been written in markdown_
+_except the footer itself_

@@ -1,11 +1,7 @@
 #TODO
+_[notes](#notes)_
 
-
-- rewrite to use ajax
-    - pretty much done, but may be a little messy
-
-- create an array of reserved words in the index page that will be passed to a
-  handler function
+- Need to redirect to / if it is not there!
 - I've decided on a data structure
     - the actual posts will be flat file, for ease of use  
     but all the files will be indexed in a database  
@@ -21,3 +17,4 @@
         - if I use this method then I will not be able to search for an hour after updating the site, but the data will be instantly accessable
 - also so that searching is possible at all :p
     - Do search as you type querying?
+        - this can be done using __jquery__

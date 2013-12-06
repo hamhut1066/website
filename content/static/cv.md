@@ -60,7 +60,6 @@ __Skills__
 - Kenya Driving License
 - Cooking
 - Java (OOP)
-- 2 years using Mac Os X
 - familiar with linux systems
 
 
