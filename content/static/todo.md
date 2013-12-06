@@ -18,3 +18,4 @@ _[notes](#notes)_
 - also so that searching is possible at all :p
     - Do search as you type querying?
         - this can be done using __jquery__
+- consider a sitemap
