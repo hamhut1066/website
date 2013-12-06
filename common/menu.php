@@ -17,7 +17,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
-                <li><a href="/thisisarandomlink">I am a Red Herring</a></li>
+                <li><a class="click" dest="thisisaredherring" href="#">I am a Red Herring</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Personal - external</li>
                 <li><a href="http://blog.hamhut1066.com">Ghost Blog</a></li>
@@ -25,7 +25,7 @@
                 <li><a class="click" dest="cv" href="#">Curriculum Vitae</a></li>
               </ul>
             </li>
-            <li class="btn pull-right">
+            <li class="btn navbar-right">
                 <audio controls>
                 <source src="http://home.hamhut1066.com:1235/stream.ogg" type="audio/ogg">
                 :( no support for ogg
