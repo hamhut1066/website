@@ -1,5 +1,6 @@
 $(document).ready( function() {
-        if (location.hash == "") { //this means that I am at root.
+        $("#location").html($.url());
+        if (location.pathname == "/" && $.url().param("page") == null) { //this means that I am at root.
             $.ajax({
                 type: "GET",
                 data: "page=index",
@@ -10,7 +11,7 @@ $(document).ready( function() {
             });
         }
         //this means that I am not at root and have just arrived at the site
-        else loadPage(location.hash.substring(1)); 
+        else window.location.replace("http://hamhut1066.com/?page="+location.pathname.substring(1));; 
     $(function() { // this is a sample function of how I should deal with ajax
         // <a class = 'plusOne' id = 'someIDForYourSQLTable'>+1</a>
         $(".plusOne").bind("click", function() {
@@ -41,7 +42,9 @@ function loadPage(dest) {
         url: "/ajax/gethint.php",
         success: function(data) { //if there is a successful reply
             $("#content").html(data);
-            location.hash = dest;
+            var stateObj = { foo: "bar" };
+            history.pushState(stateObj, "page 2", dest);
+            //location.hash = dest;
         }
     });
 }
