@@ -1,14 +1,18 @@
 $(document).ready( function() {
-        $("#location").html($.url());
-        if (location.pathname == "/" && $.url().param("page") == null) { //this means that I am at root.
-            $.ajax({
-                type: "GET",
-                data: "page=index",
-                url: "/ajax/gethint.php",
-                success: function(data) { //if there is a successful reply
-                    $("#content").html(data);
-                }
-            });
+        url = $.url().param("page");
+        //$("#location").html(url);
+        if (location.pathname == "/") { //this means that I am at root.
+            if (url == null) {
+                $.ajax({
+                    type: "GET",
+                    data: "page=index",
+                    url: "/ajax/gethint.php",
+                    success: function(data) { //if there is a successful reply
+                        $("#content").html(data);
+                    }
+                });
+            }
+            else { loadPage(url);}
         }
         //this means that I am not at root and have just arrived at the site
         else window.location.replace("http://hamhut1066.com/?page="+location.pathname.substring(1));; 
@@ -42,8 +46,8 @@ function loadPage(dest) {
         url: "/ajax/gethint.php",
         success: function(data) { //if there is a successful reply
             $("#content").html(data);
-            var stateObj = { foo: "bar" };
-            history.pushState(stateObj, "page 2", dest);
+            var stateObj = { foo: "." };
+            history.pushState(stateObj, "unknown", "/"+dest);
             //location.hash = dest;
         }
     });
