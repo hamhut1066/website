@@ -33,12 +33,12 @@
             </li>
         </ul>
         </li><!-- drop down -->
-        <form class="navbar-form navbar-right" action="/search" method="get">
+        <!--<form class="navbar-form navbar-right" action="/search" method="get">
             <div class="form-group">
                 <input type="text" placeholder="Search" name="s" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Go</button>
-        </form>
+        </form>-->
     </div><!--/.navbar-collapse -->
     </div>
 </div>

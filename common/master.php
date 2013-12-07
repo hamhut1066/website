@@ -56,4 +56,5 @@ define(COMMON, "/srv/http/common");
 <!-- end footer  #############################################-->
 <!-- all function based scripts at the end-->
 <script src="/js/custom.js"></script>
+<script src="/js/purl/purl.js"></script>
 </html>
